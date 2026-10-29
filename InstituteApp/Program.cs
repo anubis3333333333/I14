@@ -3,16 +3,24 @@ class Program{
     static void Main(string[] args){
         Console.WriteLine("вОЛЖСКИЙ ФИЛИАЛ ВОЛГУ");
         Student student1 = new Student("Александр", "Дугин", 81, "ИСП-243");
-        Student student2 = new Student("Фридрих", "Ницше", 51, "ИСП-2222");
+        Student student2 = new Student("Фридрих", "Ницше", 51, "ИСП-241");
        
+        Group group1 = new Group("ИСП-241", "РАЗРАБОТКА ПО");
+        Group group2 = new Group("ИСП-243", "РАЗРАБОТКА СТАНКОВ");
 
-        student1.Introduce();
+
+        group1.AddStudent(student2);
+        group2.AddStudent(student1);
         Console.WriteLine();
 
-        student2.Introduce();
-        Console.WriteLine();
+        group1.ShowAllStudents();
+        group2.ShowAllStudents();
 
-        student1.Study();
-        student2.Study();
+        group1.ShowCount();
+        group2.ShowCount();
+
+
+
+        
     }
 }
